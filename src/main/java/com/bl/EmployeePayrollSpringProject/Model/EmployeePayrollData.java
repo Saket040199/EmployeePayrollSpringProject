@@ -1,9 +1,15 @@
 package com.bl.EmployeePayrollSpringProject.Model;
 
+import javax.persistence.Id;
+
 import com.bl.EmployeePayrollSpringProject.employeepayrollDTO.EmployeePayrollDTO;
 
+import lombok.Data;
+
+@Data
 public class EmployeePayrollData {
 
+	@Id
 	private int employeePayrollId;
 	private String name;
 	private Long salary;
@@ -18,30 +24,4 @@ public class EmployeePayrollData {
 		this.name = employeePayrollDTO.name;
 		this.salary = employeePayrollDTO.salary;
 	}
-
-	public int getEmployeePayrollId() {
-		return employeePayrollId;
-	}
-
-	public void setEmployeePayrollId(int employeePayrollId) {
-		this.employeePayrollId = employeePayrollId;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Long getSalary() {
-		return salary;
-	}
-
-	public void setSalary(Long salary) {
-		this.salary = salary;
-	}
-	
-	
 }

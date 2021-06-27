@@ -13,9 +13,6 @@ public class EmployeePayrollDTO {
 		// TODO Auto-generated constructor stub
 	}
 	
-	@Override
-	public String toString() {
-		return " [name=" + name + ", salary=" + salary + "]";
-	}
+	
 	
 }
