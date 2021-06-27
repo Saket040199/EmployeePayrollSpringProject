@@ -3,12 +3,16 @@ package com.bl.EmployeePayrollSpringProject.employeepayrollDTO;
 public class EmployeePayrollDTO {
 
 	public String name;
-	public Long salary;
-	public EmployeePayrollDTO(String name, Long salary) {
+	public long salary;
+	public EmployeePayrollDTO(String name, long i) {
 		super();
 		this.name = name;
-		this.salary = salary;
+		this.salary = i;
 	}
+	public EmployeePayrollDTO() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	@Override
 	public String toString() {
 		return " [name=" + name + ", salary=" + salary + "]";
