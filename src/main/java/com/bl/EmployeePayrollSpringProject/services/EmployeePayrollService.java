@@ -48,7 +48,12 @@ public class EmployeePayrollService implements IEmployeePayrollService{
 
 	@Override
 	public void deleteEmployeePayrollData(int empId) {
-        employeePayrollList.remove(empId);		
+        EmployeePayrollData employeePayrollData = employeePayrollList.stream()
+				.filter(empData -> empData.getEmployeePayrollId() == empId)
+				.findFirst()
+				.orElseThrow(() -> new EmployeePayrollException("Delete cannot be successfull !! InvalidId"));	
+	int delete = employeePayrollList.indexOf(employeePayrollData);
+	employeePayrollList.remove(delete);
 	}
 
 }
