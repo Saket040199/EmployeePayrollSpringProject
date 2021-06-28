@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.bl.EmployeePayrollSpringProject.Exceptions.EmployeePayrollException;
 import com.bl.EmployeePayrollSpringProject.Model.EmployeePayrollData;
 import com.bl.EmployeePayrollSpringProject.employeepayrollDTO.EmployeePayrollDTO;
 
@@ -22,7 +23,10 @@ public class EmployeePayrollService implements IEmployeePayrollService{
 	@Override
 	public EmployeePayrollData getEmployeePayrollDataById(int empId) {
 		// TODO Auto-generated method stub
-		return employeePayrollList.get(empId-1);
+		return employeePayrollList.stream()
+				.filter(empData -> empData.getEmployeePayrollId() == empId)
+				.findFirst()
+				.orElseThrow(() -> new EmployeePayrollException("Data Not found !! InvalidId"));
 	}
 
 	@Override
