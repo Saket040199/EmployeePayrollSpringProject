@@ -56,4 +56,10 @@ public class EmployeePayrollService implements IEmployeePayrollService{
 	employeePayrollList.remove(delete);
 	}
 
+	@Override
+	public List<EmployeePayrollData> getEmployeesByDepartment(String department) {
+		// TODO Auto-generated method stub
+		return employeeRepository.findEmployeesByDepartment(department);
+	}
+
 }
